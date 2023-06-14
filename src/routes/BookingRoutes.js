@@ -5,7 +5,7 @@ const {
   createBooking,
   retrieveBookings
 } = require('../services/BookingServices');
-const { Seat } = require('../models/Schema');
+const { Seat, Booking } = require('../models/Schema');
 
 const router = express.Router();
 
@@ -24,7 +24,7 @@ router.get('/seatsPricing/', async (req, res) => {
   try {
     const { _id } = req.query;
     const seat = await Seat.findById(_id);
-    console.log("uygf",_id)
+    // console.log("uygf",_id)
     if (!seat) {
       return res.status(404).json({ error: 'Seat not found' });
     }
