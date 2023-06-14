@@ -45,7 +45,7 @@ router.post('/booking', async (req, res) => {
     const { seatIds, user, phoneNumber } = req.body;
 
     const booking = await createBooking(seatIds, user, phoneNumber);
-    
+      
     res.json({ booking });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -62,7 +62,7 @@ router.get('/bookings', async (req, res) => {
     }
 
     const bookings = await retrieveBookings(userIdentifier);
-   
+
     res.json({ bookings });
   } catch (error) {
     res.status(500).json({ error: error.message });
