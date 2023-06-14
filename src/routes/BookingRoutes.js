@@ -45,8 +45,11 @@ router.post('/booking', async (req, res) => {
     const { seatIds, user, phoneNumber } = req.body;
 
     const booking = await createBooking(seatIds, user, phoneNumber);
-
-    res.json({ booking });
+    const booked={
+      id:booking._id,
+      amount:booking.totalAmount
+    }  
+    res.json({ booked });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
