@@ -65,8 +65,11 @@ router.get('/bookings', async (req, res) => {
     }
 
     const bookings = await retrieveBookings(userIdentifier);
-
-    res.json({ bookings });
+    const booked={
+      id:booking._id,
+      amount:booking.totalAmount
+    }  
+    res.json({ booked });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
