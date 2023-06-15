@@ -1,3 +1,22 @@
+# Installation
+- Clone the repository to your local machine.
+- Navigate to the project directory.
+- Run npm install to install the dependencies.
+## Configuration
+Before running the application, make sure to configure the following:
+
+- Create a .env file in the root directory.
+- Set the MongoDB connection URI in the .env file. Example:
+-  MONGODB_URI=mongodb://localhost:27017/mydatabase
+-  Set the PORT value
+
+## Usage
+- To start the application, run npm start in the project directory.
+- The server will start running and will be accessible at `http://localhost:PORT`
+
+## To run the script to upload the default data to your database by reading the CSV file.
+  just uncomment the function call below in config folder csvReader file and update the path with    your csv file or call the function created
+
 # API Endpoints Documentation
 This document provides information about the available endpoints for the API.
 
